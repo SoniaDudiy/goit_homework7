@@ -58,13 +58,16 @@ def main(folder: Path):
     for folder in parser.FOLDERS[::-1]:
         handle_folder(folder)
 
-if __name__ == "__main__":
+def start():
     if len(sys.argv) > 1:
         folder_for_scan = Path(sys.argv[1])
         print(f'Starting in folder: {folder_for_scan.resolve()}')
         main(folder_for_scan.resolve())
     else:
-        print("Please provide a folder path as an argument.")    
+        print("Please provide a folder path as an argument.")
 
+
+if __name__ == "__main__":
+    start()
 
 
